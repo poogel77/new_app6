@@ -11,55 +11,12 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
-<script >
-var admobid = {};
-if( /(android)/i.test(navigator.userAgent) ) { 
-    admobid = { // for Android
-        banner: 'ca-app-pub-5391292239420673/2299772940',
-        interstitial: 'ca-app-pub-5391292239420673/5613166147'
-    };
-} else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-    admobid = { // for iOS
-        banner: 'ca-app-pub-6869992474017983/4806197152',
-        interstitial: 'ca-app-pub-6869992474017983/7563979554'
-    };
-} else {
-    admobid = { // for Windows Phone
-        banner: 'ca-app-pub-6869992474017983/8878394753',
-        interstitial: 'ca-app-pub-6869992474017983/1355127956'
-    };
-}
 
-if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
-    document.addEventListener('deviceready', initApp, false);
-} else {
-    initApp();
-}
-
-function initApp() {
-    if (! AdMob ) { alert( 'admob plugin not ready' ); return; }
-
-    AdMob.createBanner( {
-        adId: admobid.banner, 
-        isTesting: false,
-        overlap: false, 
-        offsetTopBar: false, 
-        position: AdMob.AD_POSITION.BOTTOM_CENTER,
-        bgColor: 'black'
-    } );
-    
-    AdMob.prepareInterstitial({
-        adId: admobid.interstitial,
-        autoShow: true
-    });
-}
-
-
-</script>
 <script type="text/javascript" src="js/index.js"></script>
 
 </head>
 <body onunload="dismiss();">
+<script src="js/admob_simple.js"></script>
 	<div data-role="page" id="postIndex" data-theme="b">
 	    <div data-role="header" data-position="fixed" data-theme="b">
 	        <h1>Selliyal</h1>
@@ -69,6 +26,5 @@ function initApp() {
 	        </ul>        
 	    </div>
 	</div> 
-	
 </body>
 </html>
