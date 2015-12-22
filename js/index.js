@@ -173,6 +173,11 @@ function posts(json) {
 	    
 	 	if ("title" in json.posts[i]) {
 	      var postcontent = json.posts[i].title;}
+		  
+		  if ("thumbnail" in json.posts[i]) {
+	      var postthumbnail = json.posts[i].thumbnail;}
+		  
+		  
 	    else
 	    if ("content" in json.posts[i]) {
 	      var postcontent = json.posts[i].content;}
@@ -188,7 +193,7 @@ function posts(json) {
 	  		var date = "null";
 	  	}
         
-        html = html + "<li>" + "<a href=\"post.html?id=" + postid + "\">" + "<h2>" + postcontent + "</h2>" + "<p>" + date + "</p></a></li>";
+        html = html + "<li>" + "<a href=\"post.html?id=" + postid + "\">" +'<img src="' + postthumbnail + '"/ height="80px"/ width="80px"/>' + "<h2>" + postcontent + "</h2>" + "<p>" + date + "</p></a></li>";
         
         document.getElementById("postsList").innerHTML = html;
         $("#postsList").listview("refresh");
