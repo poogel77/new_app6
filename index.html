@@ -12,9 +12,9 @@
 <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
-<script src="js/admob_simple.js"></script>
+
 </head>
-<body>
+<body onunload="dismiss();">
 	<div data-role="page" id="postIndex" data-theme="b">
 	    <div data-role="header" data-position="fixed" data-theme="b">
 	        <h1>Selliyal</h1>
@@ -24,6 +24,6 @@
 	        </ul>        
 	    </div>
 	</div> 
-	
+	<script src="js/admob_simple.js"></script>
 </body>
 </html>
